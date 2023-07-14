@@ -18,7 +18,7 @@ Mock.mock('/login', 'post', (data) => {
 });
 
 
-Mock.mock('/initAdmin', 'get', (data) => {
+Mock.mock('/initAdmin', 'get', () => {
     return {
         code: 200,
         data: {

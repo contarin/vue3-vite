@@ -1,15 +1,14 @@
 <template>
-    <a-layout-content :style="{ margin: '20px'}">
+    <a-layout-content :style="{ margin: '20px' }">
         <section class="yfos-app-main">
             <router-view v-slot="{ Component, route }">
-                <transition name="fade" mode="out-in">
+                <transition name="fade-slide" mode="out-in" appear>
                     <keep-alive :include="tagsViewStore.visitedViews">
-                        <component :is="Component" :key="route.path" />
+                        <component :is="Component" :key="route.fullPath" />
                     </keep-alive>
                 </transition>
             </router-view>
         </section>
-        
     </a-layout-content>
 </template>
 
@@ -19,4 +18,6 @@ import { useTagsViewStore } from '@/store/modules/tagsView'
 const tagsViewStore = useTagsViewStore();
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>

@@ -8,7 +8,6 @@
         </a-layout-sider>
         <a-layout :style="{ marginLeft: marginLeft }">
             <SlideHeader v-model:collapsed="collapsed"></SlideHeader>
-
             <TagsView />
             <AppMain />
         </a-layout>

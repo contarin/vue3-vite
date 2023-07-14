@@ -1,6 +1,6 @@
 <template>
     <div class="yfos-warpper">
-        <a-table :columns="columns" :data-source="data" :pagination="pagination" :scroll="tableHeader">
+        <a-table :columns="columns" :data-source="data" :pagination="pagination" :scroll="{x: '100%', y: 'calc(100vh - 270px)'}">
             <template #headerCell="{ column }">
             </template>
             <template #bodyCell="{ column, record }">
@@ -46,14 +46,6 @@ const columns = [
     },
 ];
 
-const tableHeader = computed(() => {
-    if(pagination.value.total > 50) {
-        return {y : window.innerHeight - 270}
-    } else {
-        return false;
-    }
-})
-
 const pagination = ref({
     current: 1,
     pageSize: 50,
@@ -64,14 +56,11 @@ const pagination = ref({
     onChange: (page, pageSize) => {
         pagination.value.current = page
         pagination.value.pageSize = pageSize
-        // getUserData()
-        console.log(123123);
     },
 });
-
 const data = ref([])
 const getUserData = () => {
-    getUserList(pagination.value.pageSize, pagination.value.current).then(res => {
+    getUserList().then(res => {
         data.value = res.data.list
         pagination.value.total = res.data.count
     })
@@ -80,4 +69,5 @@ getUserData()
 
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>

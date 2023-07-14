@@ -6,6 +6,7 @@
 html body {
   background: #f0f2f5;
   background-color: #f0f2f5;
+  overflow: hidden;
 }
 
 .flex {
@@ -112,4 +113,21 @@ html body {
 .yfos-warpper {
   background: #fff;
   padding: 10px;
+}
+
+
+/* fade-slide 动画 */
+.fade-slide-leave-active,
+.fade-slide-enter-active {
+  transition: all 0.3s;
+}
+
+.fade-slide-enter-from {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
 }
