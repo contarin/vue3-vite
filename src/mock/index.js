@@ -35,3 +35,32 @@ Mock.mock('/logout', 'get', () => {
         message: '退出成功'
     }
 });
+
+// 获取用户列表
+Mock.mock('/user/list', 'get', () => {
+    let userList = [];
+    for (let i = 0; i < 100; i++) {
+        userList.push(Mock.mock({
+            id: '@increment',
+            username: '@cname',
+            age: '@integer(1, 100)',
+            address: '@county(true)',
+            'sex|1': ['男', '女'],
+            'role|1': ['超级管理员', '管理员', '普通用户'],
+            'status|1': ['启用', '禁用'],
+            'mobile': /^1[385][1-9]\d{8}/,
+            'email': /[1-9]\d{4,10}@[qQ][qQ]\.(com|cn)/,
+            'create_time': '@datetime'
+        }))
+    }
+    return {
+        code: 200,
+        data: {
+            list: userList,
+            count: 100,
+            page: 1,
+            pageSize: 5
+        },
+        message: 'success'
+    }
+});

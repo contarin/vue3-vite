@@ -8,6 +8,10 @@ import '@/mock/index'; // mock数据
 // 全局注册 ant-design-vue 组件库
 import 'ant-design-vue/dist/antd.css'
 import Antd from 'ant-design-vue'
+import moment from 'moment'
+// 全局注册 moment.js 日期处理插件
+import 'moment/locale/zh-cn'
+moment.locale('zh-cn');
 // 全局注入 ant-design-vue 组件库的图标
 import * as Icons from '@ant-design/icons-vue';
 const app = createApp(App);

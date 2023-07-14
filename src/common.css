@@ -3,14 +3,10 @@
   padding: 0;
 }
 
-/* body {
-  font-family: 'Roboto';
+html body {
+  background: #f0f2f5;
+  background-color: #f0f2f5;
 }
-
-@font-face {
-  font-family: 'Roboto';
-  src: url('');
-} */
 
 .flex {
   display: flex;
@@ -25,10 +21,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-#app {
-  height: 100%;
 }
 
 .yfos-layout-main .ant-layout-sider {
@@ -115,4 +107,9 @@
   border-color: #f3ce76;
   background-color: #f3ce76;
   color: #fff;
+}
+
+.yfos-warpper {
+  background: #fff;
+  padding: 10px;
 }

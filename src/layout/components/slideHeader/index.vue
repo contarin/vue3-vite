@@ -2,6 +2,7 @@
     <a-layout-header>
         <menu-fold-outlined class="trigger yfos-icon-size" @click="openMenu" />
         <div class="yfos-layout-header-action flex_item">
+            <Message />
             <a-dropdown>
                 <div class="yfos-layout-header-action__item yfos-layout-header-action__user flex_item">
                     <img src="@/assets/images/header_avatar.jpg" alt="">
@@ -15,7 +16,6 @@
                     </a-menu>
                 </template>
             </a-dropdown>
-            <Message />
             <div class="yfos-layout-header-action__item flex_item" @click="openDrawer">
                 <setting-outlined class="yfos-icon-size" />
             </div>
