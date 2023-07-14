@@ -15,14 +15,7 @@
                     </a-menu>
                 </template>
             </a-dropdown>
-            <a-popover trigger="click">
-                <template #content>
-                    <div></div>
-                </template>
-                <div class="yfos-layout-header-action__item flex_item">
-                    <sound-outlined class="yfos-icon-size" />
-                </div>
-            </a-popover>
+            <Message />
             <div class="yfos-layout-header-action__item flex_item" @click="openDrawer">
                 <setting-outlined class="yfos-icon-size" />
             </div>
@@ -36,6 +29,7 @@ import { reactive, toRefs, ref, computed, watch } from 'vue'
 import { useUserStore } from '@/store/modules/user'
 import { useTagsViewStore } from '@/store/modules/tagsView'
 import ActionDrawer from './actionDrawer.vue'
+import Message from './message.vue'
 import { useRouter, useRoute } from 'vue-router';
 const userStore = useUserStore();
 const tagsViewStore = useTagsViewStore();
